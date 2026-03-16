@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c0dcuc827yyyw"]
+
+[ext_resource type="PackedScene" uid="uid://ckwepa1swqv7r" path="res://juego/paletajugador.tscn" id="1_hssua"]
+[ext_resource type="PackedScene" uid="uid://803d2ai4ii2e" path="res://juego/techo.tscn" id="2_ci5ue"]
+[ext_resource type="PackedScene" uid="uid://bbhmm355joxlv" path="res://juego/piso.tscn" id="3_embnx"]
+
+[node name="mundo" type="Node2D" unique_id=85346041]
+position = Vector2(0, -1)
+
+[node name="paletajugador" parent="." unique_id=1717272184 instance=ExtResource("1_hssua")]
+position = Vector2(73, 317)
+
+[node name="techo" parent="." unique_id=1535107592 instance=ExtResource("2_ci5ue")]
+
+[node name="piso" parent="." unique_id=1673839475 instance=ExtResource("3_embnx")]
