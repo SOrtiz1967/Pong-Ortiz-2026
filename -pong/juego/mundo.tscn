@@ -3,13 +3,37 @@
 [ext_resource type="PackedScene" uid="uid://ckwepa1swqv7r" path="res://juego/paletajugador.tscn" id="1_hssua"]
 [ext_resource type="PackedScene" uid="uid://803d2ai4ii2e" path="res://juego/techo.tscn" id="2_ci5ue"]
 [ext_resource type="PackedScene" uid="uid://bbhmm355joxlv" path="res://juego/piso.tscn" id="3_embnx"]
+[ext_resource type="Texture2D" uid="uid://dex280ft6iym8" path="res://imgs/pelotita.png" id="4_embnx"]
+[ext_resource type="Script" uid="uid://dgf2n1vf3kcsq" path="res://juego/pelota.gd" id="4_sh0ne"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sh0ne"]
+radius = 21.0
 
 [node name="mundo" type="Node2D" unique_id=85346041]
-position = Vector2(0, -1)
+position = Vector2(-3, 0)
 
 [node name="paletajugador" parent="." unique_id=1717272184 instance=ExtResource("1_hssua")]
-position = Vector2(73, 317)
+position = Vector2(82, 330)
+
+[node name="paletajugador2" parent="." unique_id=1013470466 instance=ExtResource("1_hssua")]
+position = Vector2(1074, 333)
+tecla_arriba = "arriba2"
+tecla_abajo = "abajo2"
 
 [node name="techo" parent="." unique_id=1535107592 instance=ExtResource("2_ci5ue")]
 
 [node name="piso" parent="." unique_id=1673839475 instance=ExtResource("3_embnx")]
+
+[node name="pelota" type="CharacterBody2D" parent="." unique_id=1233882225]
+position = Vector2(3, -220)
+script = ExtResource("4_sh0ne")
+
+[node name="Sprite2D" type="Sprite2D" parent="pelota" unique_id=2144093550]
+position = Vector2(587, 317)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_embnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pelota" unique_id=1036268381]
+position = Vector2(587, 317)
+shape = SubResource("CircleShape2D_sh0ne")
+one_way_collision_margin = 3.5
