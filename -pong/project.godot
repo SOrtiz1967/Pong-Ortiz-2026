@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pong"
-run/main_scene="uid://c0dcuc827yyyw"
+run/main_scene="uid://fsa55qn4l3am"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -45,3 +45,4 @@ abajo2={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+rendering_method="gl_compatibility"

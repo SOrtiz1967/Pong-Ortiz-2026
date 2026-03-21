@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://fsa55qn4l3am"]
+
+[ext_resource type="Script" uid="uid://ndgwskxxqifc" path="res://menu_inicial.gd" id="1_u4fxu"]
+
+[node name="MenuInicial" type="Control" unique_id=1283436118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4fxu")
+
+[node name="Button" type="Button" parent="." unique_id=1162092524]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 268.0
+offset_right = 699.0
+offset_bottom = 314.0
+text = "Iniciar juego"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
