@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://c0dcuc827yyyw"]
 
 [ext_resource type="PackedScene" uid="uid://ckwepa1swqv7r" path="res://juego/paletajugador.tscn" id="1_hssua"]
+[ext_resource type="Script" uid="uid://b21o7tskgpxue" path="res://juego/mundo.gd" id="1_sh0ne"]
 [ext_resource type="PackedScene" uid="uid://803d2ai4ii2e" path="res://juego/techo.tscn" id="2_ci5ue"]
 [ext_resource type="PackedScene" uid="uid://bbhmm355joxlv" path="res://juego/piso.tscn" id="3_embnx"]
-[ext_resource type="Texture2D" uid="uid://dex280ft6iym8" path="res://imgs/pelotita.png" id="4_embnx"]
-[ext_resource type="Script" uid="uid://dgf2n1vf3kcsq" path="res://juego/pelota.gd" id="4_sh0ne"]
+[ext_resource type="PackedScene" uid="uid://bcuissmgaa8mh" path="res://juego/pelota.tscn" id="4_embnx"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_sh0ne"]
-radius = 21.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mplgi"]
+size = Vector2(385, 660)
 
 [node name="mundo" type="Node2D" unique_id=85346041]
-position = Vector2(-3, 0)
+script = ExtResource("1_sh0ne")
 
 [node name="paletajugador" parent="." unique_id=1717272184 instance=ExtResource("1_hssua")]
 position = Vector2(82, 330)
@@ -24,16 +24,20 @@ tecla_abajo = "abajo2"
 
 [node name="piso" parent="." unique_id=1673839475 instance=ExtResource("3_embnx")]
 
-[node name="pelota" type="CharacterBody2D" parent="." unique_id=1233882225]
-position = Vector2(3, -220)
-script = ExtResource("4_sh0ne")
+[node name="pelota" parent="." unique_id=364806086 instance=ExtResource("4_embnx")]
+position = Vector2(575, 325)
 
-[node name="Sprite2D" type="Sprite2D" parent="pelota" unique_id=2144093550]
-position = Vector2(587, 317)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_embnx")
+[node name="arcoizq" type="Area2D" parent="." unique_id=1900993201]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pelota" unique_id=1036268381]
-position = Vector2(587, 317)
-shape = SubResource("CircleShape2D_sh0ne")
-one_way_collision_margin = 3.5
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arcoizq" unique_id=42676050]
+position = Vector2(-193.5, 320)
+shape = SubResource("RectangleShape2D_mplgi")
+
+[node name="arcoder" type="Area2D" parent="." unique_id=1034919123]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="arcoder" unique_id=2077956324]
+position = Vector2(1346, 320)
+shape = SubResource("RectangleShape2D_mplgi")
+
+[connection signal="body_entered" from="arcoizq" to="." method="_on_arcoizq_body_entered"]
+[connection signal="body_entered" from="arcoder" to="." method="_on_arcoder_body_entered"]
