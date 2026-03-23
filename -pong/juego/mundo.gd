@@ -19,8 +19,13 @@ func _on_arcoizq_body_entered(body: Node2D) -> void:
 	if body.name == "pelota":
 		puntos_jugador_der += 1 
 		$PuntajeDer.text = str(puntos_jugador_der)
-		print("Puntos Derecha: ", puntos_jugador_der) 
-		body.call_deferred("reiniciar") 
+		
+		
+		if puntos_jugador_der == 5:
+			$MenuGameOver.declarar_ganador("El jugador Derecha Gano!")
+		else:
+			
+			body.call_deferred("reiniciar") 
 
 func _on_arcoder_body_entered(body: Node2D) -> void:
 	
@@ -28,5 +33,7 @@ func _on_arcoder_body_entered(body: Node2D) -> void:
 	if body.name == "pelota":
 		puntos_jugador_izq += 1 
 		$PuntajeIzq.text = str(puntos_jugador_izq)
-		print("Puntos izquierda: ", puntos_jugador_izq) 
-		body.call_deferred("reiniciar")
+		if puntos_jugador_izq == 5:
+			$MenuGameOver.declarar_ganador("El jugador izquierda gano!")
+		else:
+			body.call_deferred("reiniciar")

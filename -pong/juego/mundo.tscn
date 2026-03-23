@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bbhmm355joxlv" path="res://juego/piso.tscn" id="3_embnx"]
 [ext_resource type="PackedScene" uid="uid://bcuissmgaa8mh" path="res://juego/pelota.tscn" id="4_embnx"]
 [ext_resource type="PackedScene" uid="uid://cac2j2xfxkybf" path="res://juego/menu_pausa.tscn" id="6_mplgi"]
+[ext_resource type="PackedScene" uid="uid://duv2gd5dx27jx" path="res://juego/menu_game_over.tscn" id="7_a6y64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mplgi"]
 size = Vector2(386.5, 674)
@@ -61,6 +62,8 @@ text = "0
 "
 
 [node name="MenuPausa" parent="." unique_id=1798415451 instance=ExtResource("6_mplgi")]
+
+[node name="MenuGameOver" parent="." unique_id=613561809 instance=ExtResource("7_a6y64")]
 
 [connection signal="body_entered" from="arcoizq" to="." method="_on_arcoizq_body_entered"]
 [connection signal="body_entered" from="arcoder" to="." method="_on_arcoder_body_entered"]
