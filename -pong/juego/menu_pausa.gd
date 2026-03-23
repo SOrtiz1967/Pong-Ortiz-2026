@@ -28,10 +28,9 @@ func activar_pausa() -> void:
 
 
 func _on_reiniciar_pressed() -> void:
-	# IMPORTANTE: Despausar el juego ANTES de reiniciar la escena, 
-	# o el juego nuevo arrancará congelado.
+
 	get_tree().paused = false 
-	# Esto reinicia la escena actual de la cancha devolviendo los puntos a 0
+	
 	get_tree().reload_current_scene()
 
 
