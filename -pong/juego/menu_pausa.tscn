@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cac2j2xfxkybf"]
+
+[ext_resource type="Script" uid="uid://c1wxpf7qbq6b4" path="res://juego/menu_pausa.gd" id="1_jd2x8"]
+
+[node name="MenuPausa" type="CanvasLayer" unique_id=1798415451]
+process_mode = 3
+script = ExtResource("1_jd2x8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=222488386]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.44313726)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=5058846]
+offset_left = 352.0
+offset_top = 192.0
+offset_right = 800.0
+offset_bottom = 448.0
+alignment = 1
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=1911600979]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+text = "Volver al juego"
+
+[node name="Reiniciar" type="Button" parent="VBoxContainer" unique_id=626544905]
+layout_mode = 2
+text = "Reiniciar"
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Reiniciar" to="." method="_on_reiniciar_pressed"]

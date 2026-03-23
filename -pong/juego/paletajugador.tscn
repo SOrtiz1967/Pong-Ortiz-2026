@@ -1,18 +1,20 @@
 [gd_scene format=3 uid="uid://ckwepa1swqv7r"]
 
 [ext_resource type="Script" uid="uid://cl81hpl0pdwif" path="res://juego/paletajugador.gd" id="1_lw75f"]
-[ext_resource type="Texture2D" uid="uid://f0utvxt0fri5" path="res://icon.svg" id="1_msvgo"]
+[ext_resource type="Texture2D" uid="uid://cvkqhxe48xvlg" path="res://imgs/image-removebg-preview (1).png" id="2_lw75f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lw75f"]
-size = Vector2(117, 114)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lw75f"]
+radius = 24.0
+height = 141.0
 
 [node name="paletajugador" type="CharacterBody2D" unique_id=1717272184]
 script = ExtResource("1_lw75f")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=186159494]
-position = Vector2(2, -4)
-texture = ExtResource("1_msvgo")
+position = Vector2(-37.00001, -23.499996)
+scale = Vector2(0.36451614, 0.4061033)
+texture = ExtResource("2_lw75f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2135303704]
-position = Vector2(3.5, -3)
-shape = SubResource("RectangleShape2D_lw75f")
+position = Vector2(-36, -16.5)
+shape = SubResource("CapsuleShape2D_lw75f")

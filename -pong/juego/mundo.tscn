@@ -5,27 +5,30 @@
 [ext_resource type="PackedScene" uid="uid://803d2ai4ii2e" path="res://juego/techo.tscn" id="2_ci5ue"]
 [ext_resource type="PackedScene" uid="uid://bbhmm355joxlv" path="res://juego/piso.tscn" id="3_embnx"]
 [ext_resource type="PackedScene" uid="uid://bcuissmgaa8mh" path="res://juego/pelota.tscn" id="4_embnx"]
+[ext_resource type="PackedScene" uid="uid://cac2j2xfxkybf" path="res://juego/menu_pausa.tscn" id="6_mplgi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mplgi"]
-size = Vector2(385, 660)
+size = Vector2(386.5, 674)
 
 [node name="mundo" type="Node2D" unique_id=85346041]
 script = ExtResource("1_sh0ne")
 
 [node name="paletajugador" parent="." unique_id=1717272184 instance=ExtResource("1_hssua")]
-position = Vector2(82, 330)
+position = Vector2(82, 339)
 
 [node name="paletajugador2" parent="." unique_id=1013470466 instance=ExtResource("1_hssua")]
-position = Vector2(1074, 333)
+position = Vector2(1142, 343)
 tecla_arriba = "arriba2"
 tecla_abajo = "abajo2"
 
 [node name="techo" parent="." unique_id=1535107592 instance=ExtResource("2_ci5ue")]
+position = Vector2(0, -8)
 
 [node name="piso" parent="." unique_id=1673839475 instance=ExtResource("3_embnx")]
+position = Vector2(0, 23)
 
 [node name="pelota" parent="." unique_id=364806086 instance=ExtResource("4_embnx")]
-position = Vector2(575, 325)
+position = Vector2(578, 320)
 
 [node name="arcoizq" type="Area2D" parent="." unique_id=1900993201]
 
@@ -36,8 +39,28 @@ shape = SubResource("RectangleShape2D_mplgi")
 [node name="arcoder" type="Area2D" parent="." unique_id=1034919123]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="arcoder" unique_id=2077956324]
-position = Vector2(1346, 320)
+position = Vector2(1345.25, 313)
 shape = SubResource("RectangleShape2D_mplgi")
+
+[node name="PuntajeIzq" type="Label" parent="." unique_id=678946148]
+offset_left = 450.0
+offset_top = 1.0
+offset_right = 490.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 70
+text = "0
+"
+
+[node name="PuntajeDer" type="Label" parent="." unique_id=868123558]
+offset_left = 664.0
+offset_top = 1.0
+offset_right = 704.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 70
+text = "0
+"
+
+[node name="MenuPausa" parent="." unique_id=1798415451 instance=ExtResource("6_mplgi")]
 
 [connection signal="body_entered" from="arcoizq" to="." method="_on_arcoizq_body_entered"]
 [connection signal="body_entered" from="arcoder" to="." method="_on_arcoder_body_entered"]
