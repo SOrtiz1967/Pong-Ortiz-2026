@@ -16,7 +16,7 @@ func _input(event: InputEvent) -> void:
 		activar_pausa()
 		
 func activar_pausa() -> void:
-	# Invertir el estado para poder pausar y despausar
+	# Invertir el estado para poder pausar y despausars
 	get_tree().paused = !get_tree().paused
 	
 
